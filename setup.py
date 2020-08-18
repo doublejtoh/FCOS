@@ -38,6 +38,7 @@ def get_extensions():
     define_macros = []
 
     if (CUDA_HOME is not None) or os.getenv("FORCE_CUDA", "0") == "1":
+        print("CUDA HOME is not None, build gpu versions")
         extension = CUDAExtension
         sources += source_cuda
         define_macros += [("WITH_CUDA", None)]
